@@ -1,4 +1,44 @@
 from random import randint
+class Pet:
+  def __init__(self, title):
+    self.hungry = 40
+    self.title = title
+    self.thirsty = 40
+    self.play = 0
+  def feding(self):
+    self.hungry -= 30
+		self.thirsty += 10
+    self.play -= 10
+		print('Time to eat!')
+  def drinking(self):
+		self.thirsty -= 30
+    self.play -= 10
+		print('Time to drink!')
+  def playing(self):
+    self.hungry += 40
+		self.thirsty += 40
+    self.play += 30
+		print('Time to play!')
+  def live(self):
+		live_cube = randint(1,3)
+		if live_cube == 1:
+			self.hungry()
+		elif live_cube == 2:
+			self.thirsty()
+		elif live_cube == 3:
+			self.play()
+		self.final()
+  def final(self):
+		if self.play == 100:
+			print('Amazing! Pet happy!')
+			self.alive = False
+		elif self.thirsty == 100:
+			print('Too bad... Pet die...')
+			self.alive = False
+		elif self.hungry == 100:
+			print('Too bad... Pet die...')
+			self.alive = False
+
 class Student:
 	def __init__(self, name):
 		self.name = name
@@ -48,48 +88,6 @@ class Student:
 		elif self.gladness < -20:
 			print('Depression :(')
 			self.alive = False
-
-class Pet:
-  def __init__(self, title):
-    self.hungry = 40
-    self.title = title
-    self.thirsty = 40
-    self.play = 0
-  def loking_for(self, Student):
-    print(Student.name, 'is loking for pet')
-  def feding(self):
-    self.hungry -= 30
-    self.thirsty += 10
-    self.play -= 10
-    print('Time to eat!')
-  def drinking(self):
-    self.thirsty -= 30
-    self.play -= 10
-    print('Time to drink!')
-  def playing(self):
-    self.hungry += 30
-    self.thirsty += 30
-    self.play += 30
-    print('Time to play!')
-  def live(self):
-    live_cube = randint(1,3)
-    if live_cube == 1:
-      self.hungry()
-    elif live_cube == 2:
-      self.thirsty()
-    elif live_cube == 3:
-      self.play()
-    self.final()
-  def final(self):
-    if self.play == 100:
-      print('Amazing! Pet happy!')
-      self.alive = False
-    elif self.thirsty == 100:
-      print('Too bad... Pet die...')
-      self.alive = False
-    elif self.hungry == 100:
-      print('Too bad... Pet die...')
-      self.alive = False
 
 print('Rose\'s life')
 obj1 = Student('Bob')
