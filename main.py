@@ -1,14 +1,17 @@
-class animal:
+class Human:
   def __init__(self, name):
     self.name = name
     self.age = 0
+    self.poor_eyesight = 0
   def live(self):
     print(self.name,' is living')
+  def school(self):
+    print(self.name,' is at school')
 
-class dog (animal):
+class Teacher (animal):
   def __init__(self, name):
     super().__init__(name)
-    self.stick = 0
+    self.c = 0
   def live(self):
     super().live()
     print('Day of',self.name,'life')
@@ -41,6 +44,3 @@ obj1.looking_for_a_stick()
 obj2 = cat('Ash')
 obj2.live()
 obj2.looking_for_a_mouse()
-obj3 = hamster ('Lily')
-obj3.live()
-obj3.looking_for_a_seed()
