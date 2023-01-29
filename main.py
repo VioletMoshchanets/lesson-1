@@ -8,39 +8,37 @@ class Human:
   def school(self):
     print(self.name,' is at school')
 
-class Teacher (animal):
+class Teacher (Human):
   def __init__(self, name):
     super().__init__(name)
-    self.c = 0
+    self.lessons_per_day = 0
   def live(self):
     super().live()
     print('Day of',self.name,'life')
-  def looking_for_a_stick(self):
-    print('Dog is looking for a stick')
+  def drink_coffee(self):
+    print('Teacher drinking coffee')
+  def give_bad_marks(self):
+    print('Teacher give bad marks for students')
 
-class cat (animal):
+class Student (Human):
   def __init__(self, name):
     super().__init__(name)
-    self.mouse = 0
+    self.finished_pens = 0
   def live(self):
     super().live()
     print('Day of',self.name,'life')
-  def looking_for_a_mouse(self):
-    print('Cat is looking for a mouse')
+  def run_at_recess(self):
+    print('Student runing at recess')
+  def get_bad_mark(self):
+    print('Student get bad mark')
 
-class hamster (animal):
-  def __init__(self, name):
-    super().__init__(name)
-    self.seed = 0
-  def live(self):
-    super().live()
-    print('Day of',self.name,'life')
-  def looking_for_a_seed(self):
-    print('Hamster is looking for a seed')
-
-obj1 = dog('Mily')
+obj1 = Teacher('Maria Ivanovna')
 obj1.live()
-obj1.looking_for_a_stick()
-obj2 = cat('Ash')
+obj1.school()
+obj1.drink_coffee()
+obj1.give_bad_marks()
+obj2 = Student('Vova')
 obj2.live()
-obj2.looking_for_a_mouse()
+obj2.school()
+obj2.run_at_recess()
+obj2.get_bad_mark()
