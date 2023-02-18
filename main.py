@@ -1,37 +1,34 @@
-class name:
-  def main():
-    name = input("What is your name?: ")
-    for i in name:
-        if i.isdigit():
-            raise ValueError("The name must not contain numbers!") 
-  
-  
-class calculator:
-  def main2():
-    try:
-      a = int(input('A: '))
-      sign = input('Sign: ')
-      b = int(input('B: '))
-      if sign == '/' and b == 0:
-        raise ZeroDivisionError
-      if sign != '+' and sign != '-' and sign!='*' and sign!='/':
-        raise Warning
-      elif sign == '+':
-        print(f"{a} + {b} = {a+b}")
-      elif sign == '-':
-        print(f"{a} - {b} = {a-b}")
-      elif sign == '*':
-        print(f"{a} * {b} = {a*b}")
-      elif sign == '*':
-        print(f"{a} / {b} = {a/b}")
-    except ValueError:
-      print('You need to input digits!')
-    except ZeroDivisionError:
-      print('Go to school')
-    except Warning:
-      print('Unknown sign')
-    except:
-      print('Error!')
+class literature:
+  def __init__ (self, title):
+    self.author = 'None' 
+    self.title = title
+    self.genre = 'None'
+  def read(self):
+    print(self.title+'is being read')
 
-obj1 = name()
-obj2 = calculator()
+class Book(literature):
+  def __init__ (self, title):
+    super().__init__(title)
+    self.pages = 0
+  def read(self):
+    super().read( )
+    print('I like to read', self.title)
+  def write(self) :
+    print('I write fanfic of', self.title)
+
+class Magazine(literature):
+  def __init__ (self, title):
+    super().__init__(title)
+    self.pictures = 0
+  def read(self):
+    super().read( )
+    print('I like to read', self.title)
+  def picture(self) :
+    print('I am looking at pictures of', self.title)
+
+book1 = Book('Harry Potter') 
+book1.read()
+book1.write()
+magazine1 = Magazine('The Daily Gazetteer') 
+magazine1.read()
+magazine1.picture()
