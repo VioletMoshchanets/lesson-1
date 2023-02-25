@@ -1,34 +1,39 @@
-class literature:
+class character:
   def __init__ (self, title):
-    self.author = 'None' 
-    self.title = title
-    self.genre = 'None'
-  def read(self):
-    print(self.title+'is being read')
+    self.superpower = 'None' 
+    self.name = title
+  def fight(self):
+    print(self.name+' is fighting')
 
-class Book(literature):
-  def __init__ (self, title):
-    super().__init__(title)
-    self.pages = 0
-  def read(self):
-    super().read( )
-    print('I like to read', self.title)
-  def write(self) :
-    print('I write fanfic of', self.title)
-
-class Magazine(literature):
+class Hero(character):
   def __init__ (self, title):
     super().__init__(title)
-    self.pictures = 0
-  def read(self):
-    super().read( )
-    print('I like to read', self.title)
-  def picture(self) :
-    print('I am looking at pictures of', self.title)
+    self.lives_saved = 0
+  def fight(self):
+    super().fight( )
+    print('Yes, babe, it`s me', self.name)
+  def greetings(self) :
+    print('Everything will be fine because I`m here', self.name)
+  def win(self) :
+    print('I told you that I would win')
 
-book1 = Book('Harry Potter') 
-book1.read()
-book1.write()
-magazine1 = Magazine('The Daily Gazetteer') 
-magazine1.read()
-magazine1.picture()
+class Villian(character):
+  def __init__ (self, title):
+    super().__init__(title)
+    self.lives_killed = 0
+  def fight(self):
+    super().fight( )
+    print('I`m not your babe because I ', self.name)
+  def shut_up(self) :
+    print('Shut up stupid hero! I will win because I great', self.name)
+  def lose(self) :
+    print('You didn`t say that and next time I will defeat you!')
+
+good = Hero('Sweet hero')
+bad = Villian('Grumbler') 
+good.greetings()
+bad.shut_up()
+good.fight()
+bad.fight()
+good.win()
+bad.lose()
